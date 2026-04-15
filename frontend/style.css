@@ -1,0 +1,60 @@
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif;background:#0f0f1a;color:#e0e0e0;min-height:100vh}
+.container{max-width:1000px;margin:0 auto;padding:30px 20px}
+
+/* Header */
+.header{text-align:center;padding:40px;background:linear-gradient(135deg,#1a1a3e,#2d1b69);border-radius:20px;border:1px solid #4a3f8a;margin-bottom:30px}
+.brain-icon{font-size:60px;margin-bottom:15px}
+.header h1{font-size:2rem;background:linear-gradient(90deg,#a78bfa,#60a5fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:10px}
+.header p{color:#9ca3af}
+
+/* Upload */
+.upload-section{background:#1a1a2e;border-radius:20px;padding:30px;margin-bottom:25px;border:1px solid #2d2d4e}
+.upload-section h2{color:#a78bfa;margin-bottom:8px}
+.hint{color:#6b7280;font-size:0.88rem;margin-bottom:20px}
+.upload-box{background:#0f0f1a;border:2px dashed #4a3f8a;border-radius:14px;padding:40px;text-align:center;cursor:pointer;transition:all .3s;margin-bottom:15px}
+.upload-box:hover{border-color:#a78bfa;background:#1a1a3e}
+.upload-box.ready{border-color:#34d399;background:#0d2818}
+.upload-icon{font-size:40px;margin-bottom:12px}
+.upload-text{color:#a78bfa;font-size:1rem;font-weight:bold;display:flex;flex-direction:column;gap:6px;align-items:center}
+.upload-text span{color:#6b7280;font-size:0.82rem;font-weight:normal}
+
+/* File list */
+.file-list{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:15px}
+.file-tag{background:#1a1a3e;border:1px solid #4a3f8a;border-radius:8px;padding:5px 12px;font-size:0.8rem;color:#a78bfa}
+.file-tag.ok{border-color:#34d399;color:#34d399}
+
+/* Button */
+.analyze-btn{width:100%;padding:15px;background:linear-gradient(135deg,#7c3aed,#2563eb);color:#fff;border:none;border-radius:12px;font-size:1.1rem;font-weight:bold;cursor:pointer;transition:all .3s}
+.analyze-btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(124,58,237,.4)}
+
+/* Loading */
+.loading{display:none;text-align:center;padding:40px}
+.spinner{width:50px;height:50px;border:4px solid #2d2d4e;border-top:4px solid #a78bfa;border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 20px}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Results */
+.results{display:none}
+.result-card{background:#1a1a2e;border-radius:20px;padding:25px;margin-bottom:20px;border:1px solid #2d2d4e}
+.result-card h2{color:#a78bfa;margin-bottom:15px}
+.result-card img{width:100%;border-radius:10px}
+
+/* Severity */
+.severity-badge{font-size:1.8rem;font-weight:bold;text-align:center;padding:20px;border-radius:12px}
+.severity-HIGH{background:#2d0a0a;color:#f87171;border:2px solid #f87171}
+.severity-MODERATE{background:#2d1f0a;color:#fbbf24;border:2px solid #fbbf24}
+.severity-LOW{background:#0a2d1a;color:#34d399;border:2px solid #34d399}
+
+/* Volume bars */
+.volume-bar-item{margin-bottom:14px}
+.volume-bar-label{display:flex;justify-content:space-between;margin-bottom:5px;font-size:.9rem}
+.volume-bar-track{background:#0f0f1a;border-radius:10px;height:12px;overflow:hidden}
+.volume-bar-fill{height:100%;border-radius:10px;transition:width 1s ease}
+.volume-total{margin-top:15px;font-weight:bold;color:#a78bfa;font-size:1rem}
+
+/* Report */
+.report{background:#0f0f1a;border-radius:10px;padding:20px;font-family:monospace;font-size:.82rem;line-height:1.8;color:#d1fae5;white-space:pre;overflow-x:auto}
+.download-btn{margin-top:15px;padding:10px 25px;background:#065f46;color:#34d399;border:1px solid #34d399;border-radius:8px;cursor:pointer;font-size:.95rem;transition:all .3s}
+.download-btn:hover{background:#047857}
+
+.disclaimer{text-align:center;color:#6b7280;font-size:.82rem;margin-top:20px;padding:15px;border:1px solid #2d2d4e;border-radius:10px}

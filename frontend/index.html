@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Tumor Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+
+    <!-- Header -->
+    <div class="header">
+        <div class="brain-icon">🧠</div>
+        <h1>Brain Tumor Segmentation</h1>
+        <p>AI-Powered MRI Analysis using U-Net (BraTS2020)</p>
+    </div>
+
+    <!-- Upload -->
+    <div class="upload-section">
+        <h2>Upload MRI Files</h2>
+        <p class="hint">Upload 4 files of one patient (T1, T1ce, T2, FLAIR)</p>
+
+        <div class="upload-box" onclick="document.getElementById('files').click()">
+            <div class="upload-icon">📂</div>
+            <div class="upload-text" id="upload-text">
+                Click to select files
+                <span>Select all 4 .nii files at once</span>
+            </div>
+            <input type="file" id="files" accept=".nii"
+                   multiple hidden onchange="filesSelected()">
+        </div>
+
+        <div class="file-list" id="file-list"></div>
+
+        <button class="analyze-btn" onclick="analyze()">
+            🔍 Analyze MRI
+        </button>
+    </div>
+
+    <!-- Loading -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+        <p>Analyzing MRI scans...</p>
+        <p class="hint">This may take 20–30 seconds</p>
+    </div>
+
+    <!-- Results -->
+    <div class="results" id="results">
+
+        <div class="result-card">
+            <h2>🖼️ Segmentation Result</h2>
+            <img id="seg-image" src="" alt="Segmentation Result">
+        </div>
+
+        <div class="result-card">
+            <h2>⚠️ Severity Assessment</h2>
+            <div class="severity-badge" id="severity-badge"></div>
+        </div>
+
+        <div class="result-card">
+            <h2>📊 Tumor Volume (cm³)</h2>
+            <div id="volume-bars"></div>
+        </div>
+
+        <div class="result-card">
+            <h2>📄 Clinical Report</h2>
+            <div class="report" id="report"></div>
+            <button class="download-btn" onclick="downloadReport()">
+                ⬇️ Download Report
+            </button>
+        </div>
+
+    </div>
+
+    <div class="disclaimer">
+        ⚠️ AI research tool only. Not for clinical diagnosis.
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
+⚠️ STILL IMPORTANT (don’t skip)
+
+You ALSO must update script.js:
+
+Change:
+
+files.length !== 5
+
+to:
+
+files.length !== 4
+✅ After this
+Save files
+Refresh browser (Ctrl + R)
+Upload 4 .nii files
+
+If still shows 5 → send script.js.
