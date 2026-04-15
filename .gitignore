@@ -64,5 +64,5 @@ logs/
 htmlcov/
 
 # ── pyenv ─────────────────────────────────────────────────────────
-# Keep backend/.python-version (used by Render), ignore root one
+# Ignore local pyenv .python-version file
 /.python-version
