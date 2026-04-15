@@ -1,2 +1,68 @@
-.venv/
+# ── Python ────────────────────────────────────────────────────────
 __pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+.Python
+
+# ── Virtual Environments ──────────────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+.env
+
+# ── Environment Variables / Secrets ──────────────────────────────
+.env
+.env.local
+.env.*.local
+*.env
+
+# ── ML Model Files (large binaries — use Git LFS or Render Disk) ──
+*.keras
+*.h5
+*.pb
+*.pt
+*.pth
+*.onnx
+*.tflite
+saved_model/
+
+# ── Temp / Upload Artifacts ───────────────────────────────────────
+backend/temp/
+temp/
+tmp/
+*.nii
+*.nii.gz
+
+# ── IDE & Editor ──────────────────────────────────────────────────
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ── OS Files ──────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ── Logs ──────────────────────────────────────────────────────────
+*.log
+logs/
+
+# ── Pytest / Coverage ─────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ── pyenv ─────────────────────────────────────────────────────────
+# Keep backend/.python-version (used by Render), ignore root one
+/.python-version

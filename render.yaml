@@ -1,0 +1,21 @@
+services:
+  # ── Backend: Flask + Gunicorn ─────────────────────────────────
+  - type: web
+    name: brain-tumor-segmentation-backend
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --workers 1 --timeout 120 --bind 0.0.0.0:$PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.13
+    # Render Free tier has 512 MB RAM — single worker is intentional
+    # to avoid OOM when loading the Keras model.
+    #
+    # ── IMPORTANT: Model File ─────────────────────────────────────
+    # The .keras model file is NOT committed to git (it's too large).
+    # You have two options:
+    #   Option A (Recommended): Add a Render Disk at /opt/render/project/src/
+    #              and upload "best_model (3).keras" to it manually.
+    #   Option B: Use Git LFS — run: git lfs track "*.keras"
+    #              then commit and push the model normally.
